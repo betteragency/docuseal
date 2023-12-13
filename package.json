@@ -45,8 +45,9 @@
   "scripts": {
     "eslint": "./node_modules/eslint/bin/eslint.js \"app/javascript/**/*.{js,vue}\" --fix",
     "build": "docker build . -t docuseal:ba_dev",
-    "start": "sudo docker run --name docuseal -p 3000:3000 -v.:/data docuseal:ba_dev",
-    "stop": "docker stop docuseal && docker rm docuseal"
+    "start": "docker run --name docuseal -p 3000:3000 -v.:/data docuseal:ba_dev",
+    "stop": "docker stop docuseal && docker rm docuseal",
+    "restart": "npm run stop && npm run start"
   },
   "babel": {
     "presets": [
