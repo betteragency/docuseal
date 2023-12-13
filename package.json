@@ -43,7 +43,10 @@
   },
   "version": "0.1.0",
   "scripts": {
-    "eslint": "./node_modules/eslint/bin/eslint.js \"app/javascript/**/*.{js,vue}\" --fix"
+    "eslint": "./node_modules/eslint/bin/eslint.js \"app/javascript/**/*.{js,vue}\" --fix",
+    "build": "docker build . -t docuseal:ba_dev",
+    "start": "sudo docker run --name docuseal -p 3000:3000 -v.:/data docuseal:ba_dev",
+    "stop": "docker stop docuseal && docker rm docuseal"
   },
   "babel": {
     "presets": [
